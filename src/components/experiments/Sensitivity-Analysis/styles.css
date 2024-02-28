@@ -1,0 +1,36 @@
+.aim{
+    text-align: left;
+    margin-left: 20px;
+}
+
+.objectives{
+    text-align: left;
+    margin-left: 20px;
+}
+
+.theory{
+    text-align: left;
+    margin-left: 20px;
+}
+
+.theory-content{
+    margin-left: 5px;
+}
+
+.aim-content{
+    margin-left: 5px;
+}
+
+.Circuit-Diagram{
+    text-align: left;
+    margin-left: 20px;
+}
+
+.circuit-image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 500px;
+    height: 500px;
+}

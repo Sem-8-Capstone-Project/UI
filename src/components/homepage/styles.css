@@ -1,0 +1,21 @@
+.welcome-bar{
+    margin-top: 5px;
+    border: solid 2px;
+    background: lightblue;
+    width: 1500px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.vision{
+    text-align: left;
+    margin-left: 20px;
+}
+
+.objectives{
+    text-align: left;
+    margin-left: 20px;
+}

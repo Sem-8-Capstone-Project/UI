@@ -60,7 +60,7 @@
 .inner:after {
   content: "OFF";
   padding-right: 10px;
-  background-color: #bbb;
+  background-color: #FF0000;
   color: #fff;
   text-align: right;
 }
@@ -90,4 +90,8 @@
     margin-right: 20px;
     padding-bottom: 10px;
     justify-content: space-between;
+}
+
+.light-intensity{
+  margin-top: 15px;
 }

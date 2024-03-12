@@ -1,6 +1,33 @@
 .topbar {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #686868;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.user-info span {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.logout-btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px;
+  background-color: #6CB4EE;
+  color: black;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.logout-btn:hover {
+  background-color: #f9f9f9;
+}

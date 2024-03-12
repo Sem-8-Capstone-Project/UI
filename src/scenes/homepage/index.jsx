@@ -5,20 +5,25 @@ import Topabar from "../../components/topbar";
 import WelcomeBar from "../../components/homepage/welcomeBar";
 import Vision from "../../components/homepage/vision";
 import Objectives from "../../components/homepage/objectives";
+
+
 function Homepage() {
   const navigate = useNavigate();
 
   const handleClick = (page) => {
     navigate(`/${page}`);
   };
+
+  
+
   return (
     <div className="App">
-      <Topabar/>
+      <Topabar />
       <main>
-        <WelcomeBar/>
+        <WelcomeBar />
         <section className="vision-objectives">
-          <Vision/>
-          <Objectives/>
+          <Vision />
+          <Objectives />
         </section>
         <section className="experiments">
           <section className="experiments-title">
@@ -34,7 +39,7 @@ function Homepage() {
                   padding: "10px",
                   margin: "5px",
                   cursor: "pointer",
-                  fontSize: "20px"
+                  fontSize: "20px",
                 }}
               >
                 Sensitivity-Analysis
@@ -48,7 +53,7 @@ function Homepage() {
                   margin: "5px",
                   cursor: "pointer",
                   fontSize: "20px",
-                  width: 'auto',
+                  width: "auto",
                 }}
               >
                 DC Motor

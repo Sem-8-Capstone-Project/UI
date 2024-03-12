@@ -1,0 +1,32 @@
+.sign-in-page {
+    display: flex;
+    height: 100vh; /* Set the height to 100% of the viewport */
+    width: 100vw; /* Set the width to 100% of the viewport */
+  }
+  
+  
+  
+  .left-section {
+    display: block;
+    padding-top: 15%;
+    text-align: center;
+    background-color: #7CB9E8;
+    flex: 1;
+  }
+  
+  .left-section h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem; /* Adjust font size as desired */
+  }
+  
+  .right-section {
+    flex: 1;
+    padding-top: 20%;
+    text-align: center;
+    background-color: #fff; /* Adjust background color as desired */
+    align-items: center;
+  }
+  
+  .google-sign-in-button{
+    margin-left: 35%;
+  }

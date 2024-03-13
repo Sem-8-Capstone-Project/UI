@@ -11,6 +11,7 @@ function Homepage() {
   const navigate = useNavigate();
 
   const handleClick = (page) => {
+
     navigate(`/${page}`);
   };
 

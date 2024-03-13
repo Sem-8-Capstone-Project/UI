@@ -90,8 +90,24 @@
     margin-right: 20px;
     padding-bottom: 10px;
     justify-content: space-between;
+    margin-top: 150px;
+    margin-bottom: 30px;
 }
 
 .light-intensity{
   margin-top: 15px;
+}
+
+.timer-container{
+  padding-left: 50%;
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
+
+.led1{
+  margin-bottom: 20px;
+}
+
+.led2{
+  margin-bottom: 20px;
 }

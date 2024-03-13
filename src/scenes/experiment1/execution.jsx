@@ -1,11 +1,14 @@
 import Topabar from "../../components/topbar";
 import Title from "../../components/experiments/title";
+import Timer from "../../components/timer";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const SensitivityAnalysisExecution = () => {
   const [led1On, isLed1On] = useState(false);
   const [led2On, isLed2On] = useState(false);
   const [lightIntensity, setLightIntensity] = useState(0);
+  const navigate = useNavigate();
   const headers = {
     "bypass-tunnel-reminder": 1,
   };
@@ -41,7 +44,7 @@ const SensitivityAnalysisExecution = () => {
       isLed1On((cur) => !cur);
     }
     setTimeout(() => {
-      console.log('Waiting for 1 second before getting intensity')
+      console.log("Waiting for 1 second before getting intensity");
     }, 1000);
     let response = await fetch(
       "https://sauravbhise.loca.lt/light/properties/light_intensity",
@@ -83,7 +86,7 @@ const SensitivityAnalysisExecution = () => {
       isLed2On((cur) => !cur);
     }
     setTimeout(() => {
-      console.log('Waiting for 1 second before getting intensity')
+      console.log("Waiting for 1 second before getting intensity");
     }, 1000);
     let response = await fetch(
       "https://sauravbhise.loca.lt/light/properties/light_intensity",
@@ -95,11 +98,32 @@ const SensitivityAnalysisExecution = () => {
     response = await response.json();
     setLightIntensity(response.lux);
   };
+
+  const handleQuit= async()=>{
+        try{
+            const response = await fetch("http://localhost:5000/quit",{
+              method: 'GET',
+              credentials: "include"
+            });
+            if(response){
+                navigate('/homepage');
+            }
+        }catch(e){
+          console.log(e);
+        }
+  }
   return (
     <>
       <Topabar />
       <Title title="Sensitivity-Analysis using LED" />
+
       <section className="virtual-execution-container">
+        <div className="timer-container">
+          <div className="timer">
+            <Timer />
+          </div>
+        </div>
+
         <div className="led-buttons">
           <div className="led 1">
             LED 1{" "}
@@ -131,10 +155,29 @@ const SensitivityAnalysisExecution = () => {
               </label>
             </div>
           </div>
-          <div className="light-intensity">
+          <div className="light-intensity" style={
+            {
+              fontWeight: "bold"
+            }
+          }>
             Light Intensity: {lightIntensity}
           </div>
         </div>
+        <div className="quit-button-container" style={{
+                        textAlign : "right",
+                        marginRight :"10px",
+        
+                    }}>
+                            <button className="quit-button" onClick={handleQuit} style={{
+                                backgroundColor: "#D22B2B",
+                                height: "40px",
+                                borderRadius: "5px",
+                                fontFamily: 'Helvetica',
+                                color: "white"
+                            }}>
+                                Finish Experiment
+                            </button>
+                    </div>
       </section>
     </>
   );

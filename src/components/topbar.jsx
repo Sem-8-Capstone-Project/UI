@@ -1,18 +1,23 @@
 import "./styles.css";
 import { useEffect, useState } from "react";
-
+import { useNavigate } from "react-router-dom";
 const Topabar = () => {
   const [userName, setUserName] = useState("");
-
+  const navigate = useNavigate();
   const getUserName = async () => {
     try {
       let response = await fetch("http://localhost:5000/user-info", {
         method: "GET",
         credentials: "include",
       });
-      response = await response.json();
-      setUserName(response.user);
-      console.log(response);
+      if(response.status === 200 || response.status === '200'){
+        response = await response.json();
+        setUserName(response.user.name);
+        console.log(response);
+      }else{
+          navigate('/');
+      }
+      
     } catch (e) {
       console.log(e);
     }
@@ -23,7 +28,7 @@ const Topabar = () => {
 
   useEffect(() => {
     getUserName();
-  }, [userName]);
+  });
   return (
     <>
       <div className="topbar">

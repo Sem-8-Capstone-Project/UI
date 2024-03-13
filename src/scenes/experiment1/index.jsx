@@ -5,14 +5,29 @@ import Objectives from "../../components/experiments/Sensitivity-Analysis/object
 import Theory from "../../components/experiments/Sensitivity-Analysis/theory";
 import CircuitDiagram from "../../components/experiments/Sensitivity-Analysis/circuitDiagram";
 import { useNavigate } from "react-router-dom";
+
 import "./styles.css";
 
 
 
 const Experiment1 = ()=>{
     const navigate = useNavigate();
-    const handleOnclick = ()=>{
-        navigate('/sensitivity-analysis/execution')
+    const handleOnclick = async()=>{
+        try{
+            const response = await fetch('http://localhost:5000/start',{
+              method: 'GET',
+              credentials: "include"
+            })
+            if(response.status===200 || response.status==='200'){
+              navigate('/sensitivity-analysis/execution');
+            }
+            else{
+              alert("Please Try Again after 5 minutes");
+            }
+            
+          }catch(e){
+            console.log(e);
+          }
     }
         return (
             <>
